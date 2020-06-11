@@ -9,7 +9,8 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-    int i, aux, bandera = 1;
+    size_t i, aux;
+    int bandera = 1;
 
     while(bandera != 0)
     {
