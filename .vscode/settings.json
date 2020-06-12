@@ -1,5 +1,12 @@
 {
     "files.associations": {
-        "array": "c"
+        "array": "c",
+        "*.tcc": "c",
+        "deque": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "vector": "c",
+        "functional": "c",
+        "tuple": "c"
     }
 }
