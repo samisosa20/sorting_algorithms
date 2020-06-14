@@ -16,7 +16,6 @@ int _bigest(int *array, size_t size)
 		if (k < array[i])
 			k = array[i];
 	}
-
 	return (k);
 }
 /**
@@ -72,7 +71,6 @@ void counting_sort(int *array, size_t size)
 		free(aux);
 		return;
 	}
-
 	for (i = 0; i < size; i++)
 	{
 		array_sort[aux[array[i]] - 1] = array[i];
