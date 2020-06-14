@@ -25,6 +25,7 @@ ssize_t partition(int *A, ssize_t low_index, ssize_t high_index, size_t size)
 		{
 			if (A[i] != A[j])
 			{
+				/*hacemos el swap*/
 				aux = A[j];
 				A[j] = A[i];
 				A[i] = aux;
