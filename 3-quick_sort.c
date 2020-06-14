@@ -6,7 +6,7 @@
  * @A: array of integers
  * @size: lenght of array
  * @low_index: low index
- * @hi: high index
+ * @high_index: high index
  * Return: none
  */
 ssize_t partition(int *A, ssize_t low_index, ssize_t high_index, size_t size)
