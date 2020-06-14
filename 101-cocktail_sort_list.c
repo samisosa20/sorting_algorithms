@@ -3,12 +3,12 @@
 /**
  * swap - function that swaps nodes in a linked
  * list of integers
- * @node: current position to swap
+ * @current_node: current position to swap
  * @next_node: next position to be swapped
  * @list: doubly linked list of integers
  * Return: void
  */
-void swap(listint_t *node, listint_t *next_node, listint_t **list)
+void swap(listint_t *current_node, listint_t *next_node, listint_t **list)
 {
 	/*mandamos el 99, mandamos el 71 y mandamos la cabeza 19*/
 	/*el next del 99 apunta al 13*/
