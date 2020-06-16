@@ -71,10 +71,12 @@ void countSort(int *arr, ssize_t n, int exp)
 void radix_sort(int *array, size_t size)
 {
 	/* Find the maximum number to know number of digits */
-	int m = getMax(array, size), exp;
+	int m, exp;
 
 	if (!array || size < 2)
 		return;
+
+	m = getMax(array, size);
 	/* Do counting sort for every digit. Note that instead */
 	/* of passing digit number, exp is passed. exp is 10^i */
 	/* where i is current digit number */
