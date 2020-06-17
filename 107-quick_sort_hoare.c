@@ -10,12 +10,12 @@
  */
 void swap(int *array, size_t size, int *a, int *b)
 {
-    int temp;
+	int temp;
 
-        temp = *a;
-        *a = *b;
-        *b = temp;
-        print_array(array, size);
+		temp = *a;
+		*a = *b;
+		*b = temp;
+		print_array(array, size);
 }
 
 /**
@@ -40,14 +40,14 @@ size_t size)
 	pivot = A[high_index];
 
 	for (i = low_index - 1, j = high_index + 1; i < j; )
-    {
-        do {
-            i++;
-        } while (A[i] < pivot);
+	{
+		do {
+			i++;
+		} while (A[i] < pivot);
 
-        do {
-            j--;
-        } while (A[j] > pivot);
+		do {
+			j--;
+		} while (A[j] > pivot);
 		/*hacemos el swap*/
 		if (i < j)
 		{
