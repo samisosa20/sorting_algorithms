@@ -1,5 +1,23 @@
 #include "sort.h"
 
+
+/**
+ * swap - that sorts a doubly linked list of integers
+ * @array: pointers array
+ * @size: size value the lengeth
+ * @a: integer data
+ * @b: integer data
+ */
+void swap(int *array, size_t size, int *a, int *b)
+{
+    int temp;
+
+        temp = *a;
+        *a = *b;
+        *b = temp;
+        print_array(array, size);
+}
+
 /**
  * partition_hoare - function that helps partitioning the array
  * so we will have a two arrays that aren't sorted yet and
@@ -11,42 +29,31 @@
  * @high_index: high index
  * Return: none
  */
-int partition_hoare(int *A, ssize_t low_index, ssize_t high_index,
-size_t size)
+int partition_hoare(int *array, ssize_t left, ssize_t right, ssize_t size)
 {
-	int pivot;
-	ssize_t i, j;
-	int aux;
+    int pivot;
+    ssize_t asc, des;
 
-	/*pick an element from the array*/
-	pivot = A[high_index];
+    pivot = array[right];
+    for (asc = left - 1, des = right + 1; asc < des; )
+    {
+        do {
+            asc++;
+        } while (array[asc] < pivot);
 
-	for (i = low_index - 1, j = high_index + 1; i < j; )
-	{
-		/*find elements smaller than the pivot*/
-		do {
-			i++;
-		} while (A[i] < pivot);
-		/*find elements larger than the pivot*/
-		do {
-			j--;
-		} while (A[j] > pivot);
+        do {
+            des--;
+        } while (array[des] > pivot);
 
-		/*hacemos el swap*/
-		if (i < j)
-		{
-			aux = A[i];
-			A[i] = A[j];
-			A[j] = aux;
-			print_array(A, size);
-		}
-	}
-	return (j);
+        if (asc < des)
+            swap(array, size, array + asc, array + des);
+    }
+    return (asc);
 }
 
 /**
  * hoare_quicksort - function that sorts an array of integers
- * in ascending order using the Quick sort algorithm
+ * in iending order using the Quick sort algorithm
  * @A: array of integers
  * @size: lenght of array
  * @low_index: low index
@@ -72,7 +79,7 @@ size_t size)
 
 /**
  * quick_sort_hoare - function that sorts an array of integers
- * in ascending order using the Quick sort algorithm
+ * in iending order using the Quick sort algorithm
  * @array: array of integers
  * @size: lenght of array
  * Return: none
