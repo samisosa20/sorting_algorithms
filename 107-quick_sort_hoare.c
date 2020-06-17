@@ -29,26 +29,35 @@ void swap(int *array, size_t size, int *a, int *b)
  * @high_index: high index
  * Return: none
  */
-int partition_hoare(int *array, ssize_t left, ssize_t right, ssize_t size)
+int partition_hoare(int *A, ssize_t low_index, ssize_t high_index,
+size_t size)
 {
-    int pivot;
-    ssize_t asc, des;
+	int pivot = 0;
+	ssize_t i = 0, j = 0;
+	int aux = 0;
 
-    pivot = array[right];
-    for (asc = left - 1, des = right + 1; asc < des; )
+	/*pick an element from the array*/
+	pivot = A[high_index];
+
+	for (i = low_index - 1, j = high_index + 1; i < j; )
     {
         do {
-            asc++;
-        } while (array[asc] < pivot);
+            i++;
+        } while (A[i] < pivot);
 
         do {
-            des--;
-        } while (array[des] > pivot);
-
-        if (asc < des)
-            swap(array, size, array + asc, array + des);
-    }
-    return (asc);
+            j--;
+        } while (A[j] > pivot);
+		/*hacemos el swap*/
+		if (i < j)
+		{
+			aux = A[i];
+			A[i] = A[j];
+			A[j] = aux;
+			print_array(A, size);
+		}
+	}
+	return (i);
 }
 
 /**
