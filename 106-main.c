@@ -9,14 +9,14 @@
  */
 int main(void)
 {
-	int array[] = {100, 93, 40, 57, 14, 58, 85, 54,
+	int a[] = {100, 93, 40, 57, 14, 58, 85, 54,
 	31, 56, 46, 39, 15, 26, 78, 13};
-	size_t n = sizeof(array) / sizeof(array[0]);
+	size_t n = sizeof(a) / sizeof(a[0]);
 
-	print_array(array, n);
+	print_array(a, n);
 	printf("\n");
-	bitonic_sort(array, n);
+	bitonic_sort(a, n);
 	printf("\n");
-	print_array(array, n);
+	print_array(a, n);
 	return (0);
 }
