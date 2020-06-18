@@ -84,7 +84,6 @@ void heap_sort(int *array, size_t size)
 	end = size - 1;
 	while (end > 0)
 	{
-
 		aux = array[end];
 		array[end] = array[0];
 		array[0] = aux;
