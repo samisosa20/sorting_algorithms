@@ -2,19 +2,19 @@
 
 /**
  * _bigest -  Give me the largest number in a array of integers
- * @array: The Int array
+ * @a: The Int array
  * @size: Size of array
  * Return: The largest number
  */
-int _bigest(int *array, size_t size)
+int _bigest(int *a, size_t size)
 {
 	size_t i;
 	int k = 0;
 
 	for (i = 0; i < size; i++)
 	{
-		if (k < array[i])
-			k = array[i];
+		if (k < a[i])
+			k = a[i];
 	}
 	return (k);
 }

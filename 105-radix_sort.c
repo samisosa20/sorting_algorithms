@@ -30,7 +30,7 @@ int getMax(int *arr, size_t size)
  */
 void countSort(int *arr, ssize_t n, int exp)
 {
-	int *output; /* output array */
+	int *output; /* array de salida */
 	int count[10] = {0};
 	ssize_t i;
 
@@ -47,7 +47,7 @@ void countSort(int *arr, ssize_t n, int exp)
 	for (i = 1; i < 10; i++)
 		count[i] += count[i - 1];
 
-	/* Build the output array */
+	/* contruir el array de salida */
 	for (i = n - 1; i >= 0; i--)
 	{
 		output[count[(arr[i] / exp) % 10] - 1] = arr[i];
